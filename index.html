@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #ffdde1, #ee9ca7);
+      overflow: hidden;
+      font-family: 'Baloo 2', cursive;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap');
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      clip-path: polygon(50% 0%, 61% 11%, 75% 11%, 88% 25%, 88% 38%, 50% 100%, 12% 38%, 12% 25%, 25% 11%, 39% 11%);
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1); opacity: 0.8; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+
+    .container {
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 25px;
+      border-radius: 25px;
+      box-shadow: 0 0 30px rgba(255, 182, 193, 0.9);
+      position: relative;
+      z-index: 2;
+      animation: pop 1.5s ease;
+    }
+
+    .container::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .container::-webkit-scrollbar-thumb {
+      background: #ff69b4;
+      border-radius: 10px;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.7); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 2px 2px 15px #ff69b4;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
+      to { text-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493; }
+    }
+
+    .message {
+      font-size: 1.2em;
+      font-weight: 600;
+      white-space: pre-wrap;
+      display: none;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .message.show {
+      display: block;
+      opacity: 1;
+      animation: fadeInUp 1.2s ease both;
+    }
+
+    video, img, .final-text {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .final-text {
+      font-size: 1.4em;
+      color: #fff;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px #ff69b4;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal-btn, .surprise-btn {
+      background: #ff69b4;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-size: 1.3em;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+      animation: bounce 1.5s infinite;
+      margin-top: 15px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+  <div class="container">
+    <h1>Happy Birthday My Love ❤️</h1>
+    <button class="reveal-btn" id="reveal">💗 Blow or Tap to Reveal 💗</button>
+    <div class="message" id="message"></div>
+    <button class="surprise-btn" id="surprise" style="display:none;">🎉 SURPRISEEEE!!! 🎉</button>
+    <video id="editVideo" controls>
+      <source src="0715 (1).mp4" type="video/mp4">
+    </video>
+    <button class="surprise-btn" id="surprise2" style="display:none;">🎊 SURPRISEEEE FIRSEEE!!! 🎊</button>
+    <img id="collage" src="Beige Neutral Polaroid Birthday Photo Collage.png">
+    <button class="surprise-btn" id="surprise3" style="display:none;">🎁 SUPRISEEEEEEEEEEEEEEEEEEEEEE NNNNNN!!!!!! 🎁</button>
+    <video id="finalVideo" controls>
+      <source src="202507151205.mp4" type="video/mp4">
+    </video>
+    <button class="surprise-btn" id="surprise4" style="display:none;">🎂 BDAYYYY PEEE SUPRISEEEE NNNNN 🎂</button>
+    <video id="bdayVideo" controls>
+      <source src="lv_7509327353483447605_20250717105214.mp4" type="video/mp4">
+    </video>
+    <div class="final-text" id="finalText">happyyyyyyy birthdayyy mere bundii ke ladoooo😘😘😘 i loveeeeeeee youuuuu soooo muchhhhhh😘😘😘😘😘😘</div>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/7f4y7v.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const fullText = `HAPPYYYYYY BIRTHDAYYYYYYYY TUTUUUUUUUUUUUUUUUUUUUUUUUUUUUUU!!!!!!!!!!!!!!!😘😘😘😘😘😘\n\nhawwwww tutuuuu ka tuyuuuuuu agyaa pureee ek 1 sal badh hm itnaaaaaa saraa time lg gya huhhhhhhhh aaurr dekhooo ab mera tutu 17 ka hogyaaa haw hm ptaaaa mai inhaa saraa excited c apke bday ke liyeee mere most favrouite persona da bdayy mere golu khuchu muchu bundi ka laadooo tutu ka bday hm app mera bundi ka laddoo huhhhhhhhh \n\nmeraa tutu abb bda hogya 12th mei bhi hogyaaa abb bs ek saal n fir change hojau sab dekhoo meraa bhi horhaa haaaa mai hmeshaa pray kru kee mere tutu ko life mei bhottttttt success mile bhottt naam milee aurr sab bhott praise kreee yhi mangu bhagwan se apke liye golu \n\naapp dekhnaa bhotttttt agge jau apni mhenat see, ptaaa app mei ek attitude hai kabhi bhi give up nah krne ka , jo ki mujhe bhi bhottttttt inspire krtaaa tuku\n\nese bhottt kam log hotee jo kabhi give up noi krte aaur hr field mei agge ana chahte jese app mainuu bhottt psndd yeh chiz aapp mei tutu\n\napko dekhta n tohh bhottttt zydaa sikhne ko mltaa ke kesee hr situation me calm rhenaa aur shanti se sort krna\n\napp mere therapist ho tutu mai apse jbh bhi khuch bhi share krta bhott acha lgta tutu abhi khuch dino se college ke liye preshaan c n tohh apnee mera itnaaa ara help kiya mainu bhottt achaaaa lgaa tuku mainu ese lgtaa jese app mere passs beth ke mainu achee se smjha rhe ekdum counselor jese mujhee bhott aacha lgta tutu \n\napp dekhnaa bhottt agge tk jau apne haardwork se tutu apse upar koi noi hou apnee sab khuch imandari se kiya n apko sab mlu dekhnaa\n\naurr apne kabhi mujhpe bhi giveup noi kiya hmeshaaa sath diyaa wrnaa ko aur hota toh chodh detaa n tang a kr lekin app wese noi app hmeshaa mujhee itnaaaa manteee hmeshaaa mera sath deteee bhotttt psnd mujhe tutu\n\nmeraaaa bundi kaa laddooo hm huhhhhhhhhhhhhhhhhhh chlo ma happy bday gataaaa\n\nhaappyy bdaayyyy tutuuuuuu!!! happy bdayyy tutuuuuu\n\nhappy bdayy happy bdayy hapyyy bdayyy tutuuuuuuu\n\nmay god bless uuuuu happy bday happy bday happy bdayy tutuuuuuuuuuuuuuuu!!!!!!! yayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy\n\nmeraaa goluu hmeshaa aggee bhadeee aur sab acha acha kreee yhi meri pray bhgwan see mwaaaaaaaaaaaaaaaaaa \n\nhappyyy bdayyy mereee bundii ke laddooooooooooo😘😘😘😘😘😘😘😘😘\n\ni loveeeeeeee youuuuuuuu sooooo muchhh mereee goluuuu😘😘😘😘😘😘😘😘`;
+
+    document.getElementById("reveal").addEventListener("click", showMessage);
+    document.getElementById("surprise").addEventListener("click", showEdit);
+    document.getElementById("surprise2").addEventListener("click", showCollage);
+    document.getElementById("surprise3").addEventListener("click", showFinalVideo);
+    document.getElementById("surprise4").addEventListener("click", showBdayVideo);
+
+    function showMessage() {
+      document.getElementById("reveal").style.display = "none";
+      const messageDiv = document.getElementById("message");
+      messageDiv.textContent = fullText;
+      messageDiv.classList.add("show");
+      document.getElementById("surprise").style.display = "inline-block";
+    }
+
+    function showEdit() {
+      document.getElementById("editVideo").style.display = "block";
+      document.getElementById("editVideo").play();
+      document.getElementById("surprise").style.display = "none";
+      document.getElementById("surprise2").style.display = "inline-block";
+    }
+
+    function showCollage() {
+      document.getElementById("collage").style.display = "block";
+      document.getElementById("surprise2").style.display = "none";
+      document.getElementById("surprise3").style.display = "inline-block";
+    }
+
+    function showFinalVideo() {
+      document.getElementById("finalVideo").style.display = "block";
+      document.getElementById("finalVideo").play();
+      document.getElementById("surprise3").style.display = "none";
+      document.getElementById("surprise4").style.display = "inline-block";
+    }
+
+    function showBdayVideo() {
+      document.getElementById("bdayVideo").style.display = "block";
+      document.getElementById("bdayVideo").play();
+      document.getElementById("surprise4").style.display = "none";
+      document.getElementById("finalText").style.display = "block";
+    }
+
+    // Floating hearts
+    const heartsContainer = document.getElementById('hearts');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
